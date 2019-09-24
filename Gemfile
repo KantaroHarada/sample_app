@@ -12,6 +12,7 @@ end
 #gem 'sqlite3'
 # Use Puma as the app server
 gem 'rails',        '5.1.6'
+gem 'puma',         '3.9.1'
 # Use SCSS for stylesheets
 gem 'sass-rails',   '5.0.6'
 # Use Uglifier as compressor for JavaScript assets
@@ -36,11 +37,12 @@ gem 'mysql2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'sqlite3', '1.3.13'
+  #gem 'sqlite3', '1.3.13'
   gem 'byebug',  '9.0.6', platform: :mri
   # Adds support for Capybara system testing and selenium driver
   #gem 'capybara', '~> 2.13'
   #gem 'selenium-webdriver'
+  gem 'spring-commands-rspec'
 end
 
 group :development do
@@ -50,13 +52,25 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring',                '2.0.2'
   gem 'spring-watcher-listen', '2.0.1'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
 end
 group :test do
   gem 'rails-controller-testing', '1.0.2'
   gem 'minitest',                 '5.10.3'
   gem 'minitest-reporters',       '1.1.14'
   gem 'guard',                    '2.13.0'
-  gem 'guard-minitest',           '2.4.4'
+#  gem 'guard-minitest',           '2.4.4'
+#  gem 'rspec-rails'
+#  gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'capybara', '~> 2.13'
+  gem 'database_cleaner'
+  gem 'launchy'
+  gem 'spring-commands-rspec'
+  gem 'selenium-webdriver'
 end
 
 group :production do
