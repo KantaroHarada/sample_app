@@ -15,6 +15,9 @@ gem 'rails',        '5.1.6'
 gem 'bootstrap-sass', '3.3.7'
 gem 'puma',         '3.9.1'
 gem 'bcrypt',         '3.1.12'
+gem 'faker',          '1.7.3'
+gem 'will_paginate',           '3.1.6'
+gem 'bootstrap-will_paginate', '1.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails',   '5.0.6'
 # Use Uglifier as compressor for JavaScript assets
@@ -68,7 +71,7 @@ group :test do
 #  gem 'rspec-rails'
 #  gem 'rspec-rails', '~> 3.6.0'
   gem 'factory_bot_rails', '~> 4.10.0'
-  gem 'faker'
+  #gem 'faker'
   gem 'capybara', '~> 2.13'
   gem 'database_cleaner'
   gem 'launchy'
