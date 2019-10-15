@@ -3,11 +3,11 @@ class UsersController < ApplicationController
   before_action :correct_user,   only: [:edit, :update]
 
   def index
-    @users = User.paginate(page: params[:page])
   end
 
   def show
     @user = User.find(params[:id])
+    @microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def new
@@ -18,9 +18,9 @@ class UsersController < ApplicationController
     @user = User.new(user_params)    # 実装は終わっていないことに注意!
     if @user.save
       # 保存の成功をここで扱う。
-      @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
-      redirect_to root_url
+      log_in @user
+      flash[:success] = "Welcome to the Sample App!"
+      redirect_to @user
     else
       render 'new'
     end
@@ -57,13 +57,13 @@ class UsersController < ApplicationController
     # beforeアクション
 
     # ログイン済みユーザーかどうか確認
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in."
-        redirect_to login_url
-      end
-    end
+    #def logged_in_user
+    #  unless logged_in?
+    #    store_location
+    #    flash[:danger] = "Please log in."
+    #    redirect_to login_url
+    #  end
+    #end
 
     # 正しいユーザーかどうか確認
     def correct_user
