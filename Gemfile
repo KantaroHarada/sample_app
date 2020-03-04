@@ -13,7 +13,7 @@ end
 # Use Puma as the app server
 gem 'rails',        '5.1.6'
 gem 'bootstrap-sass', '3.3.7'
-gem 'puma',         '3.9.1'
+gem 'puma',         '3.12.4'
 gem 'bcrypt',         '3.1.12'
 gem 'faker',          '1.7.3'
 gem 'carrierwave',             '1.2.2'
